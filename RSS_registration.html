@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>RSS登録サイト</title>
+    </head>
+    <body>
+        <h1>RSS登録サイト</h1>
+    </body>
+    <script>
+            function registrate(){
+                var URL = document.getElementById("inputURL").value;
+                var NAME = document.getElementById("inputNAME").value;
+                var newItem = document.createElement("li");
+                newItem.innerHTML = '<a href="' + URL + '">' + NAME + '</a>';
+                var list = document.getElementById("list");
+                list.appendChild(newItem);
+            }
+
+            function edit(){
+
+            }
+            </script>
+    <section>
+        <h1>RSS登録</h1>
+        <p>登録したいRSSのURLを入力してください</p>
+        <p>URL:<input id="inputURL" type="text"></p>
+        <p>サイト名:<input id="inputNAME" type="text"></p>
+        <p>
+            <input type="button" value="登録" onclick="registrate()">
+            <input type="button" value="編集" onclick="edit()">（編集ボタンは現在使えません）
+        </p>
+
+        <ul id="list">
+            <li><a href="http://www.soumu.go.jp/news.rdf">総務省</a></li>
+        </ul>
+
+    </section>
+</html>
